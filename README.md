@@ -7,14 +7,13 @@
   </a>
 </p>
 
-**🔥 Module Docs Coming Soon**
-
 ## Presets
 - [pwa](modules/pwa)
 - [optimize](modules/optimize)
 
 ## Modules
-- [axios](modules/axios)
+- [axios](https://github.com/nuxt-community/axios-module)
+- [apollo](https://github.com/nuxt-community/apollo-module)
 - [bootstrap](modules/bootstrap-vue)
 - [bulma](modules/bulma)
 - [toast](modules/toast)
@@ -37,7 +36,11 @@
 - [cssnano](modules/cssnano)
 - [icon](modules/icon)
 - [proxy](modules/proxy)
-- [sitemap](modules/sitemap)
+- [sitemap](https://github.com/nuxt-community/sitemap-module)
+
+## Want to create your own module ?
+
+- https://nuxtjs.org/guide/modules
 
 ## License
 MIT License

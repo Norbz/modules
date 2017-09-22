@@ -7,7 +7,7 @@ const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
 
 module.exports = function nuxtIcon (options) {
   const iconSrc = options.iconSrc || path.resolve(this.options.srcDir, 'static', 'icon.png')
-  const sizes = options.sizes || [16, 120, 144, 152, 192, 384, 512]
+  const sizes = options.sizes || [64, 120, 144, 152, 192, 384, 512]
 
   // routerBase and publicPath
   const routerBase = this.options.router.base
@@ -17,6 +17,13 @@ module.exports = function nuxtIcon (options) {
     if (publicPath.indexOf('//') === 0) {
       publicPath = '/' + publicPath // escape fixUrl
     }
+  }
+
+  // Ensure icon file exists
+  if (!fs.existsSync(iconSrc)) {
+    /* eslint-disable no-console */
+    console.warn('[@nuxtjs/icon]', path.relative(this.options.srcDir, iconSrc), 'not found! Please create one or disable icon module.')
+    return
   }
 
   return Jimp.read(iconSrc).then(srcIcon => {
